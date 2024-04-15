@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="p.css">
+</head>
+<body>
+  <div  class="heading">
+    <h1>PHOTO SAVER</h1>
+  </div>
+    
+   <div class="main">
+    <div class="te" ></div>
+     </div>
+     <div id="file-contener">
+      <div class="sub-contener">
+        <button><input type="file" class="input" ></button>
+      </div>
+    </div>
+  
+    <script>
+     let tdiv=document.querySelector(".te")
+     let input1=document.querySelector(".input")
+     let main=document.querySelector(".main")
+
+   input1.addEventListener("change",function(){
+   let reader = new FileReader();
+   reader.addEventListener("load",()=>{
+   let kl=reader.result
+   let as=JSON.parse(localStorage.getItem("recent-image"))??[];
+          as.push({
+            k:kl,
+           } )
+          localStorage.setItem("recent-image",JSON.stringify(as))
+          name();
+        })
+     reader.readAsDataURL(this.files[0]);
+      });
+    
+     let name=()=>{
+     let rl= JSON.parse(localStorage.getItem("recent-image"))??[];
+     let finaldata='';
+     for(let g of rl){
+      console.log(g)
+    finaldata+=`<img id="img" downlode src="${g.k}"> 
+    <a href="${g.k}" download class="downl">Download  </a>`    
+   tdiv.innerHTML=finaldata      
+   } }
+      name() 
+  
+  
+    </script>
+</body>
+</html>

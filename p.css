@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.heading{
+    background-image: url(back3.png);
+    height: 100px;
+}
+.heading h1{
+    color: aliceblue;
+    text-align: center;
+    padding: 20px;
+}
+
+ button{
+    display: block;
+    margin: 100px auto;
+    width: fit-content;
+    border: 1px solid #ff004f;
+    padding: 10px 10px ;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    background-color: black;
+    transition:background 0.5s ;
+}
+button:hover{
+    background: #ff004f;
+}
+button .input{
+    font-size: 15px;
+    
+}
+.main{
+    margin: 20px;
+}
+#img{
+    margin: 4px;
+    width: 300px ;
+    height: 300px;
+    
+}
+@media screen and (max-width :600px){
+    #img{
+        width: 250px;
+        height: 300px;
+        position: relative;
+        
+    }
+    .downl{
+        display: flex;
+        }
+        .heading{
+            background-image: url(back1.png);
+            height: 100px;
+        }
+        
+}
